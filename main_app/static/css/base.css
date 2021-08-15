@@ -10,14 +10,8 @@ body {
 
 header {
   width: 100vw;
-  background: rgba(104, 197, 248, .7);
+  background: rgba(104, 197, 248, .9);
   border-bottom: rgb(36, 116, 248) solid 2px;
-}
-
-.header-logo-container {
-  margin: auto;
-  padding: 10px 20px;
-  max-width: 500px;
 }
 
 nav {
@@ -46,6 +40,12 @@ nav li {
   padding: 5px 8px;
 }
 
+.header-logo-container {
+  margin: auto;
+  padding: 10px 20px;
+  max-width: 500px;
+}
+
 @media only screen and (min-width: 768px) {
   header {
     position: sticky;
@@ -65,14 +65,6 @@ nav li {
     height: 23px;
   }
 
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    nav,
-    .header-logo-container {
-      -webkit-backdrop-filter: blur(3px);
-      backdrop-filter: blur(3px);
-    }
-  }
-
   nav {
     margin-left: auto;
     padding: 0px 15px 0px 15px;
@@ -82,37 +74,34 @@ nav li {
   }
 
   nav ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     margin: auto;
     flex-wrap: nowrap;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    header {
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+    }
   }
 }
 
 @media only screen and (min-width: 1024px) {
   header {
-    position: sticky;
     margin: 20px 20px 0 20px;
     width: calc(100vw - 40px);
+    max-width: 1920px;
     top: 20px;
     background-color: transparent;
     border-bottom: none;
-    display: flex;
-    flex-direction: row;
   }
 
   nav,
   .header-logo-container {
     margin: 0;
-    background: rgba(104, 197, 248, .7);
+    background: rgba(104, 197, 248, .9);
     border: rgb(36, 116, 248) solid 2px;
     border-radius: 18px;
-  }
-
-  header {
-    max-width: 1920px;
   }
 
   .header-logo-container {
@@ -125,5 +114,18 @@ nav li {
     margin-left: auto;
     padding: 0px 15px 0px 15px;
     height: 33.6px;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    header {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+
+    nav,
+    .header-logo-container {
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+    }
   }
 }
