@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Cat
 
 # Create your views here.
@@ -8,7 +9,6 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
-# Add new view
 def cats_index(request):
   cats = Cat.objects.all()
   return render(request, 'cats/index.html', { 'cats': cats })
@@ -16,3 +16,11 @@ def cats_index(request):
 def cats_detail(request, cat_id):
   cat = Cat.objects.get(id=cat_id)
   return render(request, 'cats/detail.html', { 'cat': cat })
+
+class CatCreate(CreateView):
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+    self.label_suffix = ""
+
+  model = Cat
+  fields = '__all__'

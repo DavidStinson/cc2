@@ -23,8 +23,10 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/cats">All Cats</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="{% url 'cats_index' %}">All Cats</a></li>
+          {% comment %} New link below {% endcomment %}
+          <li><a href="{% url 'cats_create' %}">Add a Cat</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
         </ul>
       </nav>
     </header>

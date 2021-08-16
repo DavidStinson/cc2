@@ -60,7 +60,7 @@ nav li {
 .page-header {
   display: flex;
   align-items: center;
-  margin: 16px 0;
+  margin: 16px 0 16px 8px;
 }
 
 .page-header h1 {
