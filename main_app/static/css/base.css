@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  width: 100vw;
+  width: 100%;
   background: rgba(104, 197, 248, .9);
   border-bottom: rgb(36, 116, 248) solid 2px;
 }
@@ -24,19 +24,23 @@ ul {
   padding: 0;
 }
 
+main {
+  width: calc(100vw - 20px);
+}
+
 nav a {
   text-decoration: none;
   color: #101010;
+  font-weight: 600;
 }
 
 nav a:hover {
   text-decoration: none;
-  color: #f0f0f0;
+  color: rgb(16, 56, 158);
 }
 
 nav ul {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -52,6 +56,26 @@ nav li {
   max-width: 500px;
 }
 
+.page-header {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.page-header h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.page-header img {
+  height: 40px;
+  margin-left:15px;
+}
+
+.page-header img:first-of-type {
+  margin-left: 20px;
+}
+
 @media only screen and (min-width: 768px) {
   header {
     position: sticky;
@@ -60,15 +84,14 @@ nav li {
     top: 0;
   }
 
+  main {
+    width: calc(100vw - 70px);
+    max-width: 1300px;
+  }
+
   nav,
   .header-logo-container {
     margin: 10px 0;
-  }
-
-  .header-logo-container {
-    padding: 3px 15px 1px 15px;
-    width: 213px;
-    height: 23px;
   }
 
   nav {
@@ -82,6 +105,29 @@ nav li {
   nav ul {
     margin: auto;
     flex-wrap: nowrap;
+  }
+
+  .header-logo-container {
+    padding: 3px 15px 1px 15px;
+    width: 213px;
+    height: 23px;
+  }
+
+  .page-header {
+    margin: 20px 0;
+  }
+
+  .page-header h1 {
+    font-size: 42px;
+  }
+  
+  .page-header img {
+    height: 50px;
+    margin-left:20px;
+  }
+  
+  .page-header img:first-of-type {
+    margin-left: 25px;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
