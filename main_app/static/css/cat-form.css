@@ -30,13 +30,10 @@ td > * {
 
 td > textarea {
   height: calc(4em + 8px);
+  font-family: inherit;
 }
 
 .btn {
   align-self: flex-end;
   margin-right: 5%;
-  padding: .25em .5em;
-  cursor: pointer;
-  color: green;
-  font-size: 1.1rem;
 }

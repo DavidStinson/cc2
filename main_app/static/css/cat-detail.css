@@ -11,6 +11,11 @@
   max-width: 350px;
 }
 
+.cat-actions {
+  margin-top: 20px;
+  height: auto;
+}
+
 .cat-details h1 {
   font-size: 36px;
   margin: 15px 0 3px;
