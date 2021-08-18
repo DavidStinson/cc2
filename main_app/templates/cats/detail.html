@@ -15,9 +15,7 @@
   type="text/css" 
   href="{% static 'css/cat-detail.css' %}"
 />
-{% comment %} Add this code below {% endcomment %}
 <script defer src="{% static 'js/cat-detail.js' %}"></script>
-{% comment %} Add this code above {% endcomment %}
 {% endblock %}
 
 {% block content %}
@@ -43,7 +41,6 @@
     </div>
   </div>
 </section>
-{% comment %} Existing cat-container above {% endcomment %}
 <div class="feedings-toy-container">
   <section class="feedings">
     <div class="subsection-title">
@@ -67,13 +64,11 @@
       method="post" 
       class="subsection-section"
     >
-      {% comment %} New markup below {% endcomment %}
       {% if cat.fed_for_today %}
         <p class="fed">{{cat.name}} has been fed all their meals for today!</p>
       {% else %}
         <p class="unfed">{{cat.name}} might be hungry!</p>
       {% endif %}
-      {% comment %} New markup above {% endcomment %}
       {% csrf_token %}
       {{ feeding_form.as_p }}
       <button type="submit" class="btn submit">Add Feeding</button>
