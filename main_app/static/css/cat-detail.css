@@ -29,6 +29,24 @@
   margin-bottom: 12px;
 }
 
+.subsection-section {
+  margin: 0 8px;
+}
+
+.unfed,
+.fed {
+  margin: 0;
+  font-weight: bold;
+}
+
+.unfed {
+  color: crimson;
+}
+
+.fed {
+  color: green;
+}
+
 .cat-details h1 {
   font-size: 36px;
   margin: 15px 0 3px;
@@ -69,6 +87,23 @@
 .feedings h2 {
   font-size: 32px;
   margin: 0;
+}
+
+.feedings h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.subsection-section p,
+.subsection-section input,
+.subsection-section select {
+  font-size: 1.1rem;
+}
+
+.subsection-section input,
+.subsection-section select {
+  margin-left: 5px;
+  padding: 3px;
 }
 
 .feedings table {

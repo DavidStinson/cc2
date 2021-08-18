@@ -3,10 +3,21 @@
 
 {% block head %}
 <link 
+  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+  rel="stylesheet" 
+/>
+<script 
+  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
+>
+</script>
+<link 
   rel="stylesheet" 
   type="text/css" 
   href="{% static 'css/cat-detail.css' %}"
 />
+{% comment %} Add this code below {% endcomment %}
+<script defer src="{% static 'js/cat-detail.js' %}"></script>
+{% comment %} Add this code above {% endcomment %}
 {% endblock %}
 
 {% block content %}
@@ -50,19 +61,41 @@
         alt="A kabob of kittens"
       />
     </div>
-    <table>
-      <thead>
-        <tr><th>Date</th><th>Meal</th></tr>
-      </thead>
-      <tbody>
-        {% for feeding in cat.feeding_set.all %}
-          <tr>
-            <td>{{feeding.date}}</td>
-            <td>{{feeding.get_meal_display}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    <h3>Add a Feeding</h3>
+    <form
+      action="{% url 'add_feeding' cat.id %}" 
+      method="post" 
+      class="subsection-section"
+    >
+      {% comment %} New markup below {% endcomment %}
+      {% if cat.fed_for_today %}
+        <p class="fed">{{cat.name}} has been fed all their meals for today!</p>
+      {% else %}
+        <p class="unfed">{{cat.name}} might be hungry!</p>
+      {% endif %}
+      {% comment %} New markup above {% endcomment %}
+      {% csrf_token %}
+      {{ feeding_form.as_p }}
+      <button type="submit" class="btn submit">Add Feeding</button>
+    </form>
+    <h3>Past Feedings</h3>
+    {% if cat.feeding_set.all.count %}
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Meal</th></tr>
+        </thead>
+        <tbody>
+          {% for feeding in cat.feeding_set.all %}
+            <tr>
+              <td>{{feeding.date}}</td>
+              <td>{{feeding.get_meal_display}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="subsection-section">{{cat.name}} has never been fed 😟</p>
+    {% endif %}
   </section>
 </div>
 
