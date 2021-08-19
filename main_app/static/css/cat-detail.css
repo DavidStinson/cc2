@@ -33,17 +33,34 @@
   margin: 0 8px;
 }
 
+.toy-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.color-block {
+  opacity: .8;
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+
 .unfed,
-.fed {
+.fed,
+.no-toys,
+.all-toys {
   margin: 0;
   font-weight: bold;
 }
 
-.unfed {
+.unfed,
+.no-toys {
   color: crimson;
 }
 
-.fed {
+.fed,
+.all-toys {
   color: green;
 }
 
@@ -84,12 +101,14 @@
   margin-left: 16px;
 }
 
-.feedings h2 {
+.feedings h2,
+.toys h2 {
   font-size: 32px;
   margin: 0;
 }
 
-.feedings h3 {
+.feedings h3,
+.toys h3 {
   font-size: 24px;
   margin: 10px 0;
 }
@@ -125,6 +144,20 @@
 
 .feedings tr:nth-child(even) {
   background-color: #f3f3fd;
+}
+
+.toy-container p {
+  margin: 12px 0;
+}
+
+.toy-container a {
+  text-decoration: none;
+  color: #111;
+}
+
+.toy-container .btn {
+  padding: .2rem .8rem;
+  margin-left: 10px;
 }
 
 @media only screen and (min-width: 768px) {
