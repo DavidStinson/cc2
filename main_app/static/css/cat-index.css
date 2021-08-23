@@ -17,6 +17,10 @@
   width: 255px;
 }
 
+.usr-img {
+  width: 100%;
+}
+
 .card > a {
   text-decoration: none;
   color: #111;

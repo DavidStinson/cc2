@@ -64,6 +64,10 @@
   color: green;
 }
 
+.usr-img {
+  width: 100%;
+}
+
 .cat-details h1 {
   font-size: 36px;
   margin: 15px 0 3px;
@@ -73,6 +77,10 @@
   margin: 0 0 10px;
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+.cat-details h3 {
+  margin: 16px 0 10px 0;
 }
 
 .cat-details p {
@@ -158,6 +166,17 @@
 .toy-container .btn {
   padding: .2rem .8rem;
   margin-left: 10px;
+}
+
+#file-input {
+  overflow: hidden;
+  position: absolute;
+  width: .1px;
+  height: .1px;
+}
+
+#file-name {
+  margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 768px) {
